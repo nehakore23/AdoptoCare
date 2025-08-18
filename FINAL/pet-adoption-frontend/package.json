@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "cd pet-adoption-frontend && npm run dev"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "react-router-dom": "^7.7.1"
+  }
+}
