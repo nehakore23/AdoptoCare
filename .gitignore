@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build files
+**/dist/
+**/build/
+**/target/
+
+# IDE files
+.vs/
+**/.vs/
+.idea/
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Eclipse IDE
+.classpath
+.project
