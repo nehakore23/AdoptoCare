@@ -30,7 +30,7 @@ const AdoptionRequests = () => {
       }
       
       // Fetch all adoption requests for shelter to filter
-      const endpoint = 'http://localhost:8080/api/adoption-requests';
+      const endpoint = 'https://adoptocare.onrender.com/api/adoption-requests';
       
       console.log('[DEBUG] Using endpoint:', endpoint);
       
@@ -50,7 +50,7 @@ const AdoptionRequests = () => {
         // Filter requests to only show requests for this shelter's pets
         try {
           // Fetch the shelter's pets
-          const petsResponse = await fetch('http://localhost:8080/api/pets/my-pets?userId=' + userId, {
+          const petsResponse = await fetch('https://adoptocare.onrender.com/api/pets/my-pets?userId=' + userId, {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -197,7 +197,7 @@ const AdoptionRequests = () => {
 
   const handleStatusUpdate = async (requestId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/adoption-requests/${requestId}/status`, {
+      const response = await fetch(`https://adoptocare.onrender.com/api/adoption-requests/${requestId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -215,7 +215,7 @@ const AdoptionRequests = () => {
         if (newStatus === 'approved') {
           // Update pet status in the backend
           try {
-            await fetch(`http://localhost:8080/api/pets/${requests.find(r => r.id === requestId).pet.id}/adopt`, {
+            await fetch(`https://adoptocare.onrender.com/api/pets/${requests.find(r => r.id === requestId).pet.id}/adopt`, {
               method: 'PUT',
               headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`

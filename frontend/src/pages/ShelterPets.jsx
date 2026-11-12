@@ -316,7 +316,7 @@ const ShelterPets = () => {
                   <div className="pet-image-wrapper">
                     {pet.photoUrls && pet.photoUrls.trim() !== '' ? (
                       <img 
-                        src={`http://localhost:8080/api/pets/images/${pet.photoUrls.split(',')[0]}`}
+                        src={`https://adoptocare.onrender.com/api/pets/images/${pet.photoUrls.split(',')[0]}`}
                         alt={pet.petName}
                         className="pet-image"
                         onError={(e) => {

@@ -31,7 +31,7 @@ const AnimalCarousel = () => {
               image: pet.photoUrls && pet.photoUrls.trim() !== '' 
                 ? (pet.photoUrls.startsWith('http') 
                     ? pet.photoUrls.split(',')[0] 
-                    : `http://localhost:8080/api/pets/images/${pet.photoUrls.split(',')[0]}`)
+                    : `https://adoptocare.onrender.com/api/pets/images/${pet.photoUrls.split(',')[0]}`)
                 : `https://via.placeholder.com/400x300/667eea/ffffff?text=${pet.species}`,
               description: pet.description || `${pet.species} looking for a loving home`,
               adopted: pet.adopted 

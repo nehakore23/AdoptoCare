@@ -41,7 +41,7 @@ const AdoptionApplication = () => {
 
   const fetchPetDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/api/pets/${petId}`);
+      const response = await fetch(`https://adoptocare.onrender.com/api/pets/${petId}`);
       if (response.ok) {
         const petData = await response.json();
         setPet(petData);
@@ -130,7 +130,7 @@ const AdoptionApplication = () => {
 
     
       console.log('Testing authentication...');
-      const authTestResponse = await fetch('http://localhost:8080/api/adoption-requests/test-auth', {
+      const authTestResponse = await fetch('https://adoptocare.onrender.com/api/adoption-requests/test-auth', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -146,13 +146,13 @@ const AdoptionApplication = () => {
         console.log('Auth test error:', authTestError);
       }
 
-      console.log('Making request to:', 'http://localhost:8080/api/adoption-requests');
+      console.log('Making request to:', 'https://adoptocare.onrender.com/api/adoption-requests');
       console.log('Headers:', {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       });
       
-      const response = await fetch('http://localhost:8080/api/adoption-requests', {
+      const response = await fetch('https://adoptocare.onrender.com/api/adoption-requests', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

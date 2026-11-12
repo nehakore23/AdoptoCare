@@ -78,7 +78,7 @@ const VetManageBlogPosts = ({ darkMode, setDarkMode }) => {
     
     if (imagePath.startsWith('/uploads/')) {
       const filename = imagePath.split('/').pop();
-      return `http://localhost:8080/api/blogs/image/${filename}`;
+      return `https://adoptocare.onrender.com/api/blogs/image/${filename}`;
     }
     
     return imagePath;

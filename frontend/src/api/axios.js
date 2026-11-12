@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:8080/api",
+    baseURL: "https://adoptocare.onrender.com/api",
     headers: {
         "Content-Type": "application/json",
     },
@@ -9,14 +9,14 @@ const API = axios.create({
 
 
 export const PublicAPI = axios.create({
-    baseURL: "http://localhost:8080/api",
+    baseURL: "https://adoptocare.onrender.com/api",
     headers: {
         "Content-Type": "application/json",
     },
 });
 
 export const AuthAPI = axios.create({
-    baseURL: "http://localhost:8080/api",
+    baseURL: "https://adoptocare.onrender.com/api",
     headers: {
         "Content-Type": "application/json",
     },

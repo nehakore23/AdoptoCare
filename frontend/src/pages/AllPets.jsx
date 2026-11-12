@@ -173,9 +173,9 @@ const AllPets = () => {
       console.error("Error code:", err.code);
       
       if (err.response?.status === 403) {
-        setError("Access denied. The backend server may not be running or the endpoint requires authentication. Please ensure the backend is running on http://localhost:8080");
+        setError("Access denied. The backend server may not be running or the endpoint requires authentication. Please ensure the backend is running on https://adoptocare.onrender.com");
       } else if (err.code === 'ERR_NETWORK') {
-        setError("Network error. Unable to connect to the backend server. Please ensure the backend is running on http://localhost:8080");
+        setError("Network error. Unable to connect to the backend server. Please ensure the backend is running on https://adoptocare.onrender.com");
       } else {
         setError(`Failed to load available pets: ${err.response?.data || err.message}`);
       }
@@ -334,7 +334,7 @@ const AllPets = () => {
                                 <div style={cardStyle} className="p-3">
                   <h6 className="mb-2 text-white">Troubleshooting Tips:</h6>
                   <ul className="text-start small text-white-50">
-                  <li>Make sure the backend server is running on http://localhost:8080</li>
+                  <li>Make sure the backend server is running on https://adoptocare.onrender.com</li>
                   <li>Check if the Spring Boot application started successfully</li>
                   <li>Verify that the database is accessible</li>
                   <li>Try refreshing the page or clicking "Try Again"</li>
@@ -527,7 +527,7 @@ const AllPets = () => {
                 >
                   {pet.photoUrls && pet.photoUrls.trim() !== '' ? (
                     <img 
-                      src={`http://localhost:8080/api/pets/images/${pet.photoUrls.split(',')[0]}`}
+                      src={`https://adoptocare.onrender.com/api/pets/images/${pet.photoUrls.split(',')[0]}`}
                       alt={pet.petName}
                       style={{
                         width: '100%',

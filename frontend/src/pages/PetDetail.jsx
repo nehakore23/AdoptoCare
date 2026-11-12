@@ -109,7 +109,7 @@ const PetDetail = () => {
                 <div className="card-body p-0">
                   {pet.photoUrls && pet.photoUrls.trim() !== '' ? (
                     <img 
-                      src={`http://localhost:8080/api/pets/images/${pet.photoUrls.split(',')[0]}`}
+                      src={`https://adoptocare.onrender.com/api/pets/images/${pet.photoUrls.split(',')[0]}`}
                       alt={pet.petName}
                       className="img-fluid w-100"
                       style={{ height: '400px', objectFit: 'cover' }}

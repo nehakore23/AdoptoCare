@@ -94,7 +94,7 @@ const BlogSection = () => {
 							if (blog.image.startsWith('/uploads/')) {
 								
 								const filename = blog.image.split('/').pop();
-								imageUrl = `http://localhost:8080/api/blogs/image/${filename}`;
+								imageUrl = `https://adoptocare.onrender.com/api/blogs/image/${filename}`;
 							} else {
 								imageUrl = blog.image;
 							}

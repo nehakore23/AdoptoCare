@@ -61,7 +61,7 @@ const StrayPetReport = () => {
       submitData.append('userId', userId);
       submitData.append('timestamp', new Date().toISOString());
 
-      const response = await fetch('http://localhost:8080/api/stray-pet-reports', {
+      const response = await fetch('https://adoptocare.onrender.com/api/stray-pet-reports', {
         method: 'POST',
         body: submitData,
         headers: {

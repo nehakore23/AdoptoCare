@@ -83,7 +83,7 @@ export default function Gallery() {
         image: pet.photoUrls && pet.photoUrls.trim() !== '' 
             ? (pet.photoUrls.startsWith('http') 
                 ? pet.photoUrls.split(',')[0] 
-                : `http://localhost:8080/api/pets/images/${pet.photoUrls.split(',')[0]}`)
+                : `https://adoptocare.onrender.com/api/pets/images/${pet.photoUrls.split(',')[0]}`)
             : null,
         species: pet.species
     }));

@@ -17,7 +17,7 @@ const StrayPetReports = () => {
   const fetchReports = async () => {
     try {
   
-      const response = await fetch('http://localhost:8080/api/stray-pet-reports', {
+      const response = await fetch('https://adoptocare.onrender.com/api/stray-pet-reports', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -40,7 +40,7 @@ const StrayPetReports = () => {
   const handleDeleteReport = async (reportId) => {
     if (window.confirm("Are you sure you want to delete this report? This action cannot be undone.")) {
       try {
-        const response = await fetch(`http://localhost:8080/api/stray-pet-reports/${reportId}`, {
+        const response = await fetch(`https://adoptocare.onrender.com/api/stray-pet-reports/${reportId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -183,14 +183,14 @@ const StrayPetReports = () => {
                         {report.photoUrl ? (
                           <div className="report-photo-container">
                             <img 
-                              src={`http://localhost:8080/api/stray-pet-reports/photo/${report.photoUrl.includes('/') ? report.photoUrl.split('/').pop() : report.photoUrl}`}
+                              src={`https://adoptocare.onrender.com/api/stray-pet-reports/photo/${report.photoUrl.includes('/') ? report.photoUrl.split('/').pop() : report.photoUrl}`}
                               alt={`${report.petType} photo`}
                               className="report-photo"
                               onError={(e) => {
                                 console.log("Photo failed to load:", report.photoUrl);
                                 if (!e.target.dataset.fallbackTried) {
                                   e.target.dataset.fallbackTried = 'true';
-                                  e.target.src = `http://localhost:8080/uploads/stray-pets/${report.photoUrl.includes('/') ? report.photoUrl.split('/').pop() : report.photoUrl}`;
+                                  e.target.src = `https://adoptocare.onrender.com/uploads/stray-pets/${report.photoUrl.includes('/') ? report.photoUrl.split('/').pop() : report.photoUrl}`;
                                 } else {
                                   e.target.style.display = 'none';
                                   e.target.nextSibling.style.display = 'block';

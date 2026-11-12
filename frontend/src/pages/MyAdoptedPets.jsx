@@ -21,14 +21,14 @@ const MyAdoptedPets = () => {
       const token = localStorage.getItem('token');
 
       
-      const adoptedResponse = await fetch(`http://localhost:8080/api/users/${userId}/adopted-pets`, {
+      const adoptedResponse = await fetch(`https://adoptocare.onrender.com/api/users/${userId}/adopted-pets`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
 
     
-      const applicationsResponse = await fetch(`http://localhost:8080/api/users/${userId}/adoption-applications`, {
+      const applicationsResponse = await fetch(`https://adoptocare.onrender.com/api/users/${userId}/adoption-applications`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -174,7 +174,7 @@ const MyAdoptedPets = () => {
                               const raw = (pet.photoUrls || pet.photoUrl || '').toString();
                               const first = raw ? raw.split(',')[0].trim() : '';
                               if (first) {
-                                const src = first.startsWith('http') ? first : `http://localhost:8080/api/pets/images/${first}`;
+                                const src = first.startsWith('http') ? first : `https://adoptocare.onrender.com/api/pets/images/${first}`;
                                 return (
                                   <img
                                     src={src}
