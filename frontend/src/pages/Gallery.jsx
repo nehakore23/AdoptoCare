@@ -89,12 +89,11 @@ export default function Gallery() {
     }));
 
     const categories = [
-        { id: 'all', name: 'All Pets', icon: 'ðŸ¾' },
-        { id: 'dogs', name: 'Dogs', icon: 'ðŸ•' },
-        { id: 'cats', name: 'Cats', icon: 'ðŸ±' },
-        { id: 'other', name: 'Other Pets', icon: 'ðŸ°' }
+        { id: 'all', name: 'All Pets', icon: '🐾' },
+        { id: 'dogs', name: 'Dogs', icon: '🐕' },
+        { id: 'cats', name: 'Cats', icon: '🐈' },
+        { id: 'other', name: 'Other Pets', icon: '🐰' }
     ];
-
    
     const filteredItems = galleryItems.filter(item => {
         return selectedCategory === 'all' || item.category === selectedCategory;
@@ -205,3 +204,4 @@ export default function Gallery() {
         </div>
     );
 } 
+
