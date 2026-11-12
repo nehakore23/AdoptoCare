@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaw, FaHeart, FaDog, FaCat } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -32,7 +32,9 @@ const AnimalCarousel = () => {
                 ? (pet.photoUrls.startsWith('http') 
                     ? pet.photoUrls.split(',')[0] 
                     : `https://adoptocare.onrender.com/api/pets/images/${pet.photoUrls.split(',')[0]}`)
-                : `https://via.placeholder.com/400x300/667eea/ffffff?text=${pet.species}`,
+                : (pet.species?.toLowerCase().includes('cat')
+                    ? 'https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=400&h=300&fit=crop'
+                    : 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop'),
               description: pet.description || `${pet.species} looking for a loving home`,
               adopted: pet.adopted 
             }));
@@ -274,3 +276,4 @@ const AnimalCarousel = () => {
 };
 
 export default AnimalCarousel;
+

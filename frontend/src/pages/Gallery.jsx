@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PublicAPI } from '../api/axios';
 import './Gallery.css';
@@ -44,20 +44,20 @@ export default function Gallery() {
         switch (species?.toLowerCase()) {
             case 'dog':
             case 'dogs':
-                return '🐕';
+                return 'ðŸ•';
             case 'cat':
             case 'cats':
-                return '🐱';
+                return 'ðŸ±';
             case 'bird':
             case 'birds':
-                return '🐦';
+                return 'ðŸ¦';
             case 'rabbit':
             case 'rabbits':
-                return '🐰';
+                return 'ðŸ°';
             case 'fish':
-                return '🐠';
+                return 'ðŸ ';
             default:
-                return '🐾';
+                return 'ðŸ¾';
         }
     };
 
@@ -84,15 +84,15 @@ export default function Gallery() {
             ? (pet.photoUrls.startsWith('http') 
                 ? pet.photoUrls.split(',')[0] 
                 : `https://adoptocare.onrender.com/api/pets/images/${pet.photoUrls.split(',')[0]}`)
-            : null,
+            : (pet.species?.toLowerCase().includes('cat') ? 'https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=400&h=300&fit=crop' : 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop'),
         species: pet.species
     }));
 
     const categories = [
-        { id: 'all', name: 'All Pets', icon: '🐾' },
-        { id: 'dogs', name: 'Dogs', icon: '🐕' },
-        { id: 'cats', name: 'Cats', icon: '🐱' },
-        { id: 'other', name: 'Other Pets', icon: '🐰' }
+        { id: 'all', name: 'All Pets', icon: 'ðŸ¾' },
+        { id: 'dogs', name: 'Dogs', icon: 'ðŸ•' },
+        { id: 'cats', name: 'Cats', icon: 'ðŸ±' },
+        { id: 'other', name: 'Other Pets', icon: 'ðŸ°' }
     ];
 
    
@@ -195,7 +195,7 @@ export default function Gallery() {
                             padding: '3rem',
                             color: '#6c757d'
                         }}>
-                            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🐾</div>
+                            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>ðŸ¾</div>
                             <h3>No pets found</h3>
                             <p>Try adjusting your filters or check back later for new pets!</p>
                         </div>
